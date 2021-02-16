@@ -1,0 +1,85 @@
+// Operations with fonts
+@mixin font-face($font-name, $path) {
+   @font-face {
+      font-family: quote($font-name);
+      src: url($path + '.woff') format('woff');
+      src: url($path + '.woff2') format('woff2');
+      src: url($path + '.ttf') format('truetype');
+   }
+}
+@mixin font-style(
+   $font-size,
+   $line-height: normal,
+   $letter-spacing: normal,
+   $font-weight: normal,
+   $font-style: normal
+) {
+   font-size: $font-size * 1px;
+   // font-size: $font-size * 0.1rem;
+   // example using rem values and 62.5% font-size so 1rem = 10px
+
+   @if $line-height==normal {
+      line-height: normal;
+   } @else {
+      line-height: $line-height / $font-size;
+   }
+
+   @if $letter-spacing==normal {
+      letter-spacing: normal;
+   } @else {
+      letter-spacing: #{$letter-spacing / $font-size}em;
+   }
+
+   font-weight: $font-weight;
+   font-style: $font-style;
+}
+
+// Operations with media queries
+$small-phone: 320;
+$phone: 375;
+$tablet: 712;
+$small-desktop: 1024;
+$large-desktop: 1280;
+@mixin media-phone {
+   @media only screen and (min-width: $phone * 1px) {
+      @content;
+   }
+}
+@mixin media-tablet {
+   @media only screen and (min-width: $tablet * 1px) {
+      @content;
+   }
+}
+@mixin media-small-desktop {
+   @media only screen and (min-width: $small-desktop * 1px) {
+      @content;
+   }
+}
+@mixin media-large-desktop {
+   @media only screen and (min-width: $large-desktop * 1px) {
+      @content;
+   }
+}
+
+// Operations with flexboxes
+@mixin flex-column {
+   display: flex;
+   flex-direction: column;
+}
+@mixin flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+@mixin flex-center-column {
+   @include flex-center;
+   flex-direction: column;
+}
+@mixin flex-center-vert {
+   display: flex;
+   align-items: center;
+}
+@mixin flex-center-horiz {
+   display: flex;
+   justify-content: center;
+}

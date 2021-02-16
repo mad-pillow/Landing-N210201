@@ -1,0 +1,17 @@
+/* Image HTML to CSS */
+.imgtocss {
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   position: relative;
+}
+
+.imgtocss img {
+   width: 0;
+   height: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0;
+   visibility: hidden;
+}
