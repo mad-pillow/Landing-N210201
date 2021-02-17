@@ -41,7 +41,6 @@ sliderLeftBtn[0].addEventListener('click', sliderToLeft);
 
 sliderRightBtn[0].addEventListener('click', function () {
    clearInterval(int);
-   //setTimeout(setInterval(sliderToRight, 3000), 5000);
    sliderToRight();
 });
 
