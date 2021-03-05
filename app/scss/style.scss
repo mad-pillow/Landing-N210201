@@ -1,7 +1,7 @@
 @import 'mixins';
 @import 'normalize';
-@include font-face(ro, '../fonts/Roboto-Regular');
-@include font-face(os, '../fonts/OpenSans-Regular');
+@include font-face(ro, 'assets/fonts/Roboto-Regular');
+@include font-face(os, 'assets/fonts/OpenSans-Regular');
 
 //-----------------------  Common
 
@@ -233,17 +233,21 @@ header {
 .survival {
    position: relative;
    width: 100%;
-   height: 780px;
+   height: 580px;
    z-index: 2;
 
    background-color: #02160b;
+
+   @include media-tablet {
+      height: 780px;
+   }
 
    &__hero-image {
       max-width: 1440px;
       height: 100%;
       margin: 0 auto;
 
-      background-image: url('../images/hero-image.jpg');
+      background-image: url('assets/images/hero-image.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -252,9 +256,15 @@ header {
    &__container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       width: 274px;
       height: 100%;
+      padding-bottom: 50px;
+
+      @include media-tablet {
+         padding-bottom: 0;
+         justify-content: center;
+      }
    }
 
    &__title {
@@ -397,6 +407,8 @@ header {
       height: 360px;
       overflow: hidden;
 
+      margin: 0 auto;
+
       @include media-phone {
          order: 2;
       }
@@ -452,7 +464,7 @@ header {
       }
 
       @include media-tablet {
-         width: 90px;
+         width: 70px;
       }
    }
 
@@ -676,7 +688,7 @@ footer {
    height: 100%;
    margin: 0 auto;
 
-   background-image: url('../images/footer.jpg');
+   background-image: url('assets/images/footer.jpg');
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -783,19 +795,19 @@ footer {
       }
 
       &--facebook {
-         background-image: url('../images/facebook.svg');
+         background-image: url('assets/images/facebook.svg');
       }
 
       &--instagram {
-         background-image: url('../images/instagram.svg');
+         background-image: url('assets/images/instagram.svg');
       }
 
       &--pinterest {
-         background-image: url('../images/pinterest.svg');
+         background-image: url('assets/images/pinterest.svg');
       }
 
       &--telegram {
-         background-image: url('../images/telegram.svg');
+         background-image: url('assets/images/telegram.svg');
       }
    }
 }

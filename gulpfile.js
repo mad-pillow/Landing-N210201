@@ -1,14 +1,13 @@
 // Issue files' paths
-const projectFolder = 'dist';
+const projectFolder = '../../wildlife';
 const sourceFolder = 'app';
 const path = {
    build: {
       html: projectFolder + '/',
-      css: projectFolder + '/css/',
-      js: projectFolder + '/js/',
-      img: projectFolder + '/images/',
-      fonts: projectFolder + '/fonts/',
-      icons: projectFolder + '/iconsprite/',
+      css: projectFolder + '/',
+      js: projectFolder + '/',
+      img: projectFolder + '/assets/images/',
+      fonts: projectFolder + '/assets/fonts/',
    },
    source: {
       html: sourceFolder + '/',
@@ -16,14 +15,13 @@ const path = {
       js: sourceFolder + '/js/',
       img: sourceFolder + '/images/',
       fonts: sourceFolder + '/fonts/',
-      icons: sourceFolder + '/icons/',
    },
 };
 
 // Attach gulp modules
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const jsFiles = [path.source.js + 'main.js'];
+const jsFiles = [path.source.js + 'script.js'];
 const htmlFiles = [path.source.html + '*.html', '!' + path.source.html + '_*.html'];
 const cleanCSS = require('gulp-clean-css');
 const cleanCSSlevel = 2; //0,1,2
@@ -40,16 +38,18 @@ const ttf2woff = require('gulp-ttf2woff');
 
 //Task for CSS
 gulp.task('styles', function () {
-   return gulp
-      .src(path.source.css + 'style.scss')
-      .pipe(scss({ outputStyle: 'expanded' }))
-      .pipe(groupMedia())
-      .pipe(autoprefixer({ overrideBrowserslist: ['last 5 versions'], cascade: true }))
-      .pipe(gulp.dest(path.build.css))
-      .pipe(cleanCSS({ level: cleanCSSlevel }))
-      .pipe(rename({ extname: '.min.css' }))
-      .pipe(gulp.dest(path.build.css))
-      .pipe(browserSync.stream());
+   return (
+      gulp
+         .src(path.source.css + 'style.scss')
+         .pipe(scss({ outputStyle: 'expanded' }))
+         .pipe(groupMedia())
+         .pipe(autoprefixer({ overrideBrowserslist: ['last 5 versions'], cascade: true }))
+         .pipe(gulp.dest(path.build.css))
+         //.pipe(cleanCSS({ level: cleanCSSlevel }))
+         //.pipe(rename({ extname: '.min.css' }))
+         //.pipe(gulp.dest(path.build.css))
+         .pipe(browserSync.stream())
+   );
 });
 
 //Task for JS
