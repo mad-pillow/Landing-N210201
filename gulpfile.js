@@ -64,7 +64,7 @@ gulp.task('html', function () {
 
 //Task for cleaning folders
 gulp.task('del', function () {
-   return del([projectFolder + '/**', projectFolder + '!.gitignore', projectFolder + '!.git']);
+   return del([projectFolder + '/**', projectFolder + '!.gitignore', projectFolder + '!.git'], { force: true });
 });
 
 //Task for cleaning fonts
