@@ -18,9 +18,10 @@ main {
 }
 
 .wrapper {
-  max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
+
+  max-width: 1240px;
   height: 100%;
 }
 
@@ -29,7 +30,6 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   width: 223px;
 
   text-decoration: none;
@@ -101,13 +101,15 @@ header {
 
 .header {
   position: relative;
+  margin: 0 auto;
 
   max-width: 1440px;
   height: 100%;
-  margin: 0 auto;
 
   &__container {
     position: relative;
+    padding-top: 20px;
+    z-index: 100;
 
     display: flex;
     flex-direction: column;
@@ -115,8 +117,6 @@ header {
     align-items: flex-start;
     width: 100%;
     height: 100px;
-    padding-top: 20px;
-    z-index: 100;
 
     @include media-tablet {
       flex-direction: row;
@@ -196,9 +196,10 @@ header {
     }
 
     &--sign-in {
+      padding-top: 2px;
+
       display: block;
       width: 72px;
-      padding-top: 2px;
 
       font-family: 'ro';
       font-style: normal;
@@ -239,9 +240,10 @@ header {
 //----------------------- Section Survival
 .survival {
   position: relative;
+  z-index: 2;
+
   width: 100%;
   height: 580px;
-  z-index: 2;
 
   background-color: #02160b;
 
@@ -250,9 +252,10 @@ header {
   }
 
   &__hero-image {
+    margin: 0 auto;
+
     max-width: 1440px;
     height: 100%;
-    margin: 0 auto;
 
     background-image: url('assets/images/hero-image.jpg');
     background-repeat: no-repeat;
@@ -261,15 +264,17 @@ header {
   }
 
   &__container {
+    padding-bottom: 50px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 274px;
     height: 100%;
-    padding-bottom: 50px;
 
     @include media-tablet {
       padding-bottom: 0;
+
       justify-content: center;
     }
   }
@@ -298,11 +303,11 @@ header {
   }
 
   &__donate-btn {
-    display: block;
+    margin-top: 49px;
 
+    display: block;
     width: 160px;
     height: 60px;
-    margin-top: 49px;
 
     font-family: 'ro';
     font-style: normal;
@@ -387,18 +392,13 @@ header {
 
   &__slider {
     position: relative;
+    margin-top: 80px;
 
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
-
-    @include media-phone {
-      flex-wrap: nowrap;
-    }
 
     @include media-tablet {
       margin-top: 120px;
@@ -407,12 +407,11 @@ header {
 
   &__slider-container {
     position: relative;
+    margin: 0 auto;
 
     width: 280px;
     height: 360px;
     overflow: hidden;
-
-    margin: 0 auto;
 
     @include media-tablet {
       width: 580px;
@@ -494,6 +493,7 @@ header {
 
   &__item {
     position: relative;
+
     width: 280px;
     height: 360px;
 
@@ -518,6 +518,7 @@ header {
 
   &__item + &__item {
     margin-left: 20px;
+
     @include media-large-desktop {
       margin-left: 60px;
     }
@@ -534,8 +535,9 @@ header {
   &__item-link {
     position: absolute;
     left: 50%;
-    width: fit-content;
     transform: translateX(-50%);
+
+    width: fit-content;
 
     font-family: 'os';
     font-style: normal;
@@ -547,16 +549,20 @@ header {
 
   &__item-title {
     bottom: 82px;
+
     font-size: 22px;
     line-height: 36px;
+
     transition: 0.2s ease-in;
   }
 
   &__item-link {
     bottom: 45px;
+
     font-size: 17px;
     line-height: 27px;
     text-decoration: none;
+
     transition: 0.2s cubic-bezier(1, 0.38, 0.33, 2.54);
   }
 
@@ -597,11 +603,14 @@ header {
   }
 
   &__form {
-    height: 60px;
     margin-top: 59px;
+
+    height: 60px;
   }
 
   &__text-field {
+    padding-left: 15px;
+
     width: 200px;
     height: inherit;
 
@@ -615,7 +624,6 @@ header {
     background-color: transparent;
     border: 1px solid #666;
     border-radius: 2px 0 0 2px;
-    padding-left: 15px;
 
     @include media-phone {
       width: 250px;
@@ -675,23 +683,25 @@ footer {
 }
 
 .footer {
+  margin: 0 auto;
+
   max-width: 1440px;
   height: 100%;
-  margin: 0 auto;
 
   background-image: url('assets/images/footer.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   &__container {
+    padding-bottom: 50px;
+    padding-top: 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding-bottom: 50px;
-    padding-top: 20px;
 
     @include media-tablet {
       padding-top: 0;
@@ -705,13 +715,15 @@ footer {
   }
 
   &__nav {
-    flex-basis: 60px;
-    flex-shrink: 1;
     margin-left: 0;
 
+    flex-basis: 60px;
+    flex-shrink: 1;
+
     @include media-small-desktop {
-      flex-basis: 840px;
       margin-left: 60px;
+
+      flex-basis: 840px;
     }
   }
 
@@ -754,13 +766,14 @@ footer {
   }
 
   &__social-list {
+    margin-left: 0;
+    margin-top: 30px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 240px;
-    margin-left: 0;
-    margin-top: 30px;
 
     list-style: none;
 
