@@ -1,5 +1,6 @@
 @import 'mixins';
 @import 'normalize';
+@import 'modal-window';
 @include font-face(ro, 'assets/fonts/Roboto-Regular');
 @include font-face(os, 'assets/fonts/OpenSans-Regular');
 
@@ -440,7 +441,7 @@ header {
 
     svg {
       position: absolute;
-      top: 50%;
+      top: 51%;
 
       transform: translateY(-50%);
 
@@ -479,7 +480,7 @@ header {
   &__list {
     position: absolute;
     top: 0;
-    left: 0px;
+    left: 0;
 
     display: flex;
     flex-direction: row;
@@ -548,7 +549,7 @@ header {
   }
 
   &__item-title {
-    bottom: 82px;
+    bottom: 77px;
 
     font-size: 22px;
     line-height: 36px;
@@ -557,7 +558,7 @@ header {
   }
 
   &__item-link {
-    bottom: 45px;
+    bottom: 40px;
 
     font-size: 17px;
     line-height: 27px;
